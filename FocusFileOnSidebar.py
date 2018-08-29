@@ -47,11 +47,11 @@ class FocusFileOnSidebar(sublime_plugin.WindowCommand):
             refresh_folders(self)
             self.window.set_sidebar_visible(True)
             # set_project_data is asynchronous so we need settimeout for subsequent commands
-            sublime.set_timeout_async(lambda: reveal_and_focus_in_sidebar(self), 250)
+            sublime.set_timeout_async(lambda: reveal_and_focus_in_sidebar(self), 500)
         else:
             if close_sidebar_if_opened:
                 self.window.set_sidebar_visible(False)
                 refresh_folders(self)
             else:
                 refresh_folders(self)
-                sublime.set_timeout_async(lambda: reveal_and_focus_in_sidebar(self), 250)
+                sublime.set_timeout_async(lambda: reveal_and_focus_in_sidebar(self), 500)
